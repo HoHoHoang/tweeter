@@ -1,0 +1,23 @@
+.counter {
+  float: right;
+}
+
+input {
+  float: left;
+  background-color: blue;
+  font-family: 'Bungee';
+  color: white;
+}
+
+textarea {
+  width: 90vw;
+  height: 100px;
+}
+
+hr {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5px;
+  background-color: black;
+  }

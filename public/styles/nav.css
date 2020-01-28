@@ -1,0 +1,23 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  z-index: 100;
+  background-color: #4056A1;
+  color: #FFF; 
+  top: 0;
+  position: fixed;
+}
+
+.styling {
+  font-family: 'Bungee';
+  float: left;
+  margin: 1.5em;
+}
+
+.styling-two {
+  float: right;
+  margin: 1.5em;
+}
+
+#nav-margin {
+}
