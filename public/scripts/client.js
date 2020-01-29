@@ -41,7 +41,7 @@ $(document).ready(function() {
     let $spanName = $('<span>').addClass('profileName').text(tweet.user.name);
     let $spanHandle = $('<span>').addClass('profileHandle').text(tweet.user.handle);
     let $img = $('<img>').addClass('profilePicture').attr("src", tweet.user.avatars);
-    $header.append($img).append($spanName).append($spanHandle);
+    $header.append($img, $spanName, $spanHandle);
 
     let $p = $('<p>').addClass('theTweet').text(tweet.content.text);
     
@@ -50,9 +50,9 @@ $(document).ready(function() {
     let $footer = $('<footer>');
     let $spanDays = $('<span>').addClass('daysFooter').text(tweet.created_at);
     let $spanEmoji = $('<span>').addClass('emojiFooter');
-    $footer.append($spanDays).append($spanEmoji);
+    $footer.append($spanDays, $spanEmoji);
 
-    $tweet.append($header).append($p).append($hr).append($footer);
+    $tweet.append($header, $p, $hr, $footer);
     return $tweet;
   }
   
