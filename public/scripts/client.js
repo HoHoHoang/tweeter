@@ -9,15 +9,16 @@
 $(document).ready(function() {
   
   // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
+const tweetData =     {
   "user": {
     "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
+    "avatars": "https://i.imgur.com/73hZDYK.png"
+    ,
+    "handle": "@SirIsaac"
+  },
   "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
+    "text": "If I have seen further it is by standing on the shoulders of giants"
+  },
   "created_at": 1461116232227
 }
 
@@ -36,17 +37,17 @@ const createTweetElement = function(tweet) {
 
 let tweet = `<div class="tweetBox tweetBoxHover">
 <header class="tweetHeader">
-  <img class="profilePicture" src="/images/profile-hex.png">
+  <img class="profilePicture" src="${tweetData.user.avatars}">
   <span class="profileName">${tweetData.user.name}</span>
-  <span class="profileHandle">@Barney</span>
+  <span class="profileHandle">${tweetData.user.handle}</span>
 </header>
 
-<p class="theTweet">Such Wow! Much Amazing! Great Job!</p>
+<p class="theTweet">${tweetData.content.text}</p>
 
 <hr>
 
 <footer>
-  <span class="daysFooter">10 days ago</span>
+  <span class="daysFooter">${tweetData.created_at}</span>
   <span class="emojiFooter">emojis</span>
 </footer>
 </div>`
