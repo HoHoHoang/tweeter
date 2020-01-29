@@ -14,52 +14,63 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-box.css" type="text/css" />
 
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    
   </head>
   
   <body>
-
-      <nav id='nav-margin'>
-          <span class='styling'>tweeter</span>
-          <span class='styling-two'>Write a new tweet</span>
-      </nav>
-
-
-      <header>
+    <nav id='nav-margin'>
+      <span class='styling'>tweeter</span>
+      <span class='styling-two'>Write a new tweet</span>
+    </nav>
+    <header class="topHeader">
       <div class='center'>
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div class='center'>
-          <h2>HoHoHoang</h2>
+        <h2>HoHoHoang</h2>
       </div>
     </header>
-
-</body>
-
+  </body>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+  <main>
 
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
+      <div class="tweetButtonCounter">
+        <input type="submit" value="Tweet">
+        <span id="charNum" class="counter" type="text">140</span>
+      </div>
 
-          <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
+      <article id="tweetContainer">
 
-          <input type="submit" value="Tweet">
-          <span id="charNum" class="counter" type="text">140</span>
+        <div class="tweetBox tweetBoxHover">
+          <header class="tweetHeader">
+            <img class="profilePicture" src="/images/profile-hex.png">
+            <span class="profileName">Elmo Barney</span>
+            <span class="profileHandle">@Barney</span>
+          </header>
+          
+          <p class="theTweet">Such Wow! Much Amazing! Great Job!</p>
+  
+          <hr>
 
-        </form>
-      </section>
-
-    </main>
+          <footer>
+            <span class="daysFooter">10 days ago</span>
+            <span class="emojiFooter">emojis</span>
+          </footer>
+        </div>
+        
+      </article>
+    </section>
+  </main>
 </html>

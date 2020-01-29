@@ -1,75 +1,65 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
-
 $(document).ready(function() {
   
-  // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData =     {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png"
-    ,
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+        "content": {
+          "text": "Je pense , donc je suis"
+        },
+        "created_at": 1461113959088
+    }
+  ]
+  
+  const renderTweets = function(tweets) {
+    tweets.forEach((tweet) => {
+        const $tweets = $('#tweetContainer')
+        const $article = createTweetElement(tweet)
 
+        $tweets.append($article);
+    })
+  }
 
-const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-}
+  const createTweetElement = function(tweet) {
+    let $tweet = $('<div>').addClass('tweetBox tweetBoxHover');
 
-const createTweetElement = function(tweet) {
-  let $tweet = $('<article>').addClass('tweet');
-  // ...
-  return $tweet;
-}
+    let $header = $('<header>').addClass('tweetHeader');    
+    let $spanName = $('<span>').addClass('profileName').text(tweet.user.name);
+    let $spanHandle = $('<span>').addClass('profileHandle').text(tweet.user.handle);
+    let $img = $('<img>').addClass('profilePicture').attr("src", tweet.user.avatars);
+    $header.append($img).append($spanName).append($spanHandle);
 
-let tweet = `<div class="tweetBox tweetBoxHover">
-<header class="tweetHeader">
-  <img class="profilePicture" src="${tweetData.user.avatars}">
-  <span class="profileName">${tweetData.user.name}</span>
-  <span class="profileHandle">${tweetData.user.handle}</span>
-</header>
+    let $p = $('<p>').addClass('theTweet').text(tweet.content.text);
+    
+    let $hr = $('<hr>')
 
-<p class="theTweet">${tweetData.content.text}</p>
+    let $footer = $('<footer>');
+    let $spanDays = $('<span>').addClass('daysFooter').text(tweet.created_at);
+    let $spanEmoji = $('<span>').addClass('emojiFooter');
+    $footer.append($spanDays).append($spanEmoji);
 
-<hr>
-
-<footer>
-  <span class="daysFooter">${tweetData.created_at}</span>
-  <span class="emojiFooter">emojis</span>
-</footer>
-</div>`
-
+    $tweet.append($header).append($p).append($hr).append($footer);
+    return $tweet;
+  }
+  
+  // renderTweets(data);
+  
   const $input = $('input');
-
-  $input.click((event) => {
-    console.log(event)
-
-
-    const $tweets = $('#tweetContainer')
-    const $addTweet = $(tweet)
-
-    // $addTweet.text("hello")
-
-    // $addTweet.text(`${tweetData}`)
-
-
-
-    $tweets.append($addTweet);
-
+  $input.click(() => {
+    renderTweets(data)
   })
-
-
 })

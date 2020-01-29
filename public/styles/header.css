@@ -1,6 +1,6 @@
-header {
+.topHeader {
   height: 400px;
-  width: 100vw;
+  width: 100%;
   position: relative;
   background-color: #a500f7;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
@@ -9,4 +9,8 @@ header {
 .center {
   text-align: center;
   position: relative;
+}
+
+.tweetButtonCounter {
+  margin: 15px;
 }

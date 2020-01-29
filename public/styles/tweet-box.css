@@ -1,0 +1,67 @@
+#tweetContainer {
+  width: 90vw;
+  margin-top: 90px
+}
+
+.tweetBox {
+  width: 90vw;
+  height: 225px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-bottom: 40px;
+  border: 5px solid black;
+}
+
+.tweetBoxHover:hover {
+  border: 2px solid darkblue;
+  border-radius: 5px;
+  box-shadow: 10px 10px;
+}
+
+hr {
+  width: 85vw;
+  height: 5px;
+  background: black;
+}
+
+.profilePicture {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+.profileName {
+  float: left;
+  margin: 2vh 1vh 0px;
+}
+
+.tweetBoxHover:hover .profileHandle {
+  visibility: visible;
+  opacity: 1;
+}
+
+.profileHandle {
+  float: right;
+  margin-top: 2vh;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tweetHeader {
+  height: 7vh;
+  padding: 10px;
+}
+
+.theTweet {
+  text-align: left;
+}
+
+.daysFooter {
+  float: left;
+  font-size: 12px;
+}
+
+.emojiFooter {
+  float: right;
+  font-size: 12px;
+}
