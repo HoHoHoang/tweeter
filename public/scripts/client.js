@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  
   const data = [
     {
       "user": {
@@ -30,7 +29,7 @@ $(document).ready(function() {
         const $tweets = $('#tweetContainer')
         const $article = createTweetElement(tweet)
 
-        $tweets.append($article);
+        $tweets.prepend($article);
     })
   }
 
@@ -49,7 +48,7 @@ $(document).ready(function() {
 
     let $footer = $('<footer>');
     let $spanDays = $('<span>').addClass('daysFooter').text(tweet.created_at);
-    let $spanEmoji = $('<span>').addClass('emojiFooter');
+    let $spanEmoji = $('<span>').addClass('emojiFooter').text("emojis");
     $footer.append($spanDays, $spanEmoji);
 
     $tweet.append($header, $p, $hr, $footer);
@@ -57,9 +56,42 @@ $(document).ready(function() {
   }
   
   // renderTweets(data);
-  
-  const $input = $('input');
-  $input.click(() => {
-    renderTweets(data)
-  })
+ 
+ const $form = $('#postForm');
+  const $textField = $('#field');
+  const $tweetContainer = $('#tweetContainer')
+
+ $form.on('submit', (event) => {
+   event.preventDefault();
+   const serialized = $form.serialize();
+   $.ajax({
+     url: '/tweets',
+     method: 'POST',
+     data: serialized
+   })
+     .done((post) => {
+
+      $textField.val('')   // Makes the textarea value an empty string.
+      loadTweet(); // allows upon a finished post to get the object.
+
+     })
+     .fail((err) => {
+       console.error(err);
+     });
+ });
+
+ const loadTweet = () => {
+   $.ajax({
+     url: '/tweets',
+     method: 'GET',
+     dataType: 'JSON',
+     success: (post) => {
+       renderTweets(post);
+     }
+   })
+ }
+
+ loadTweet()
+
+
 })

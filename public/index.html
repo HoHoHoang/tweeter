@@ -43,13 +43,17 @@
     <!-- Page-specific (main) content here -->
   <main>
 
+
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
-      <div class="tweetButtonCounter">
-        <input type="submit" value="Tweet">
-        <span id="charNum" class="counter" type="text">140</span>
-      </div>
+      <form method="POST" id="postForm">
+        <h2>Compose Tweet</h2>
+        <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
+        <div class="tweetButtonCounter">
+          <input type="submit" value="Tweet">
+          <span id="charNum" class="counter" type="text">140</span>
+        </div>
+      </form>
+
 
       <article id="tweetContainer">
 
@@ -69,8 +73,15 @@
             <span class="emojiFooter">emojis</span>
           </footer>
         </div>
-        
+
       </article>
+
+
+
+      <div id="posts"></div>
+
+
+      
     </section>
   </main>
 </html>
