@@ -8,11 +8,13 @@ $(document).ready(function() {
   })
   
   function countChar(input) {
-    var len = input.value.length;
-    if (len > 140) {
-      input.value = input.value.substring(0, 140);
+    var charLength = input.value.length;
+    if (charLength > 140) {
+      $charNum.css('color', 'red')
+      $charNum.text(140 - charLength);
     } else {
-      $charNum.text(140 - len);
+      $charNum.css('color', 'black')
+      $charNum.text(140 - charLength);
     }
   };
 

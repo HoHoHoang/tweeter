@@ -1,29 +1,5 @@
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-        "content": {
-          "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-    }
-  ]
-  
+
   const renderTweets = function(tweets) {
     tweets.forEach((tweet) => {
         const $tweets = $('#tweetContainer')
@@ -54,16 +30,25 @@ $(document).ready(function() {
     $tweet.append($header, $p, $hr, $footer);
     return $tweet;
   }
-  
-  // renderTweets(data);
- 
- const $form = $('#postForm');
+   
+  const $form = $('#postForm');
   const $textField = $('#field');
-  const $tweetContainer = $('#tweetContainer')
+  const $errorMessage = $('.error-message')
+ 
+  
+
+
 
  $form.on('submit', (event) => {
    event.preventDefault();
    const serialized = $form.serialize();
+   let charNum = document.getElementById("charNum").innerText;
+
+   if (charNum < 0) {
+    $errorMessage.slideDown()
+  } else {
+    $errorMessage.slideUp()
+
    $.ajax({
      url: '/tweets',
      method: 'POST',
@@ -78,6 +63,7 @@ $(document).ready(function() {
      .fail((err) => {
        console.error(err);
      });
+    }
  });
 
  const loadTweet = () => {
@@ -88,10 +74,23 @@ $(document).ready(function() {
      success: (post) => {
        renderTweets(post);
      }
-   })
+    })
  }
 
  loadTweet()
+
+//  $('button').animate({
+//    scrollTop: ($('#tweetContainer').offset().top)
+//  }, 500)
+
+// use a .focus() for your textarea to have the type cursor in there.
+
+ $('.scroll-down').click(function() {
+   console.log('is this working')
+   $('html, body').animate({
+     scrollTop: $('div#empty-space').offset().top
+   }, 500)
+ })
 
 
 })

@@ -1,7 +1,9 @@
 .topHeader {
-  height: 400px;
-  width: 100%;
-  position: relative;
+  margin: 20px;
+  float: left;
+  height: 30vh;
+  width: 40vw;
+  z-index: 80;
   background-color: #a500f7;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }

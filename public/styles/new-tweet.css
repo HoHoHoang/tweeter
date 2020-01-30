@@ -2,6 +2,18 @@
   float: right;
 }
 
+.error-message {
+  display: none;
+  color: red;
+  border: 2px red solid;
+  padding: 10px;
+}
+
+section {
+  margin-top: 100px;
+  position: relative;
+}
+
 input {
   float: left;
   background-color: blue;

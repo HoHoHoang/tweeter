@@ -1,3 +1,7 @@
+#empty-space {
+  margin-top: 20px;
+}
+
 #tweetContainer {
   width: 90vw;
   margin-top: 90px
@@ -54,6 +58,7 @@ hr {
 
 .theTweet {
   text-align: left;
+  overflow-wrap: break-word;
 }
 
 .daysFooter {

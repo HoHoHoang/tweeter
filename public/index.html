@@ -28,6 +28,8 @@
     <nav id='nav-margin'>
       <span class='styling'>tweeter</span>
       <span class='styling-two'>Write a new tweet</span>
+      <br>
+      <button class="scroll-down">Scroll</button>
     </nav>
     <header class="topHeader">
       <div class='center'>
@@ -46,7 +48,10 @@
 
     <section class="new-tweet">
       <form method="POST" id="postForm">
-        <h2>Compose Tweet</h2>
+
+        <span class="error-message">Hey... ughhh... that message is too long, could you make a TLDR?!</span>
+
+        <div id="empty-space"></div>
         <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
         <div class="tweetButtonCounter">
           <input type="submit" value="Tweet">
@@ -55,6 +60,7 @@
       </form>
 
 
+      
       <article id="tweetContainer">
 
         <div class="tweetBox tweetBoxHover">
@@ -81,7 +87,7 @@
       <div id="posts"></div>
 
 
-      
+
     </section>
   </main>
 </html>
