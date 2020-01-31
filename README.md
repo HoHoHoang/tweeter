@@ -21,7 +21,7 @@ Over the course of 4 days, cleaned and refined this project.
 ## Screenshots
 
 #### Screenshot of the Main page
-!["Screenshot of empty URLs page"](https://github.com/HoHoHoang/tweeter/blob/master/images/Main-Page.png)
+(https://github.com/HoHoHoang/tweeter/blob/master/images/Main-Page.png)
 
 #### Screenshot of Tweet Box opening up
 !["Screenshot of register page"](https://github.com/HoHoHoang/tweeter/blob/master/images/Tweet-Box.png)
