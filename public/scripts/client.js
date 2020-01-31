@@ -50,6 +50,7 @@ $(document).ready(function() {
   loadTweet();
 // ************* HELPER FUNCTIONS ABOVE **************
 
+// Goes through error checking, then runs an ajax request for the text input.
  $form.on('submit', (event) => {
    event.preventDefault();
    const serialized = $form.serialize();
@@ -78,8 +79,9 @@ $(document).ready(function() {
        $('#field').focus();
      });
     }
- });
+  });
 
+// Toggles the tweet form to slide down/up.
   $('.toggle-form').click(function() {
     $('#postForm').slideToggle();
     $('#field').focus();

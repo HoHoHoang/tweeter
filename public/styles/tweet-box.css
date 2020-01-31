@@ -1,9 +1,12 @@
-#tweetContainer {
-  margin-top: 20px;
+hr {
+  display: flex;
+  justify-content: flex-end;
+  width: 40vw;
+  height: 5px;
+  background: black;
 }
 
 .tweetBox {
-
   width: 45vw;
   height: 225px;
   padding-left: 2vw;
@@ -16,14 +19,6 @@
   border: 2px solid darkblue;
   border-radius: 5px;
   box-shadow: 10px 10px;
-}
-
-hr {
-  display: flex;
-  justify-content: flex-end;
-  width: 40vw;
-  height: 5px;
-  background: black;
 }
 
 .profilePicture {
@@ -68,4 +63,8 @@ hr {
 .emojiFooter {
   float: right;
   font-size: 12px;
+}
+
+#tweetContainer {
+  margin-top: 20px;
 }
