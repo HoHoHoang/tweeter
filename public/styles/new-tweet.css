@@ -10,6 +10,14 @@
   margin-bottom: 40px;
 }
 
+.error-message-empty {
+  display: none;
+  color: red;
+  border: 2px red solid;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
 section {
   width: 50vw;
 }

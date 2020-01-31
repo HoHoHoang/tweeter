@@ -34,6 +34,7 @@ $(document).ready(function() {
   const $form = $('#postForm');
   const $textField = $('#field');
   const $errorMessage = $('.error-message')
+  const $errorMessageEmpty = $ ('.error-message-empty')
 
 
  $form.on('submit', (event) => {
@@ -55,9 +56,14 @@ $(document).ready(function() {
       document.getElementById("charNum").innerText = 140
       $textField.val('')   // Makes the textarea value an empty string.
       loadTweet(); // allows upon a finished post to get the object.
+      $('#field').focus();
+      $errorMessageEmpty.slideUp()
      })
      .fail((err) => {
+      $errorMessageEmpty.slideDown()
        console.error(err);
+       $('#field').focus();
+
      });
     }
  });
@@ -73,23 +79,9 @@ $(document).ready(function() {
     })
  }
 
- loadTweet()
-
-//  $('button').animate({
-//    scrollTop: ($('#tweetContainer').offset().top)
-//  }, 500)
-
-// use a .focus() for your textarea to have the type cursor in there.
-
-//  $('.scroll-down').click(function() {
-//    console.log('is this working')
-//    $('html, body').animate({
-//      scrollTop: $('div#empty-space').offset().top
-//    }, 500)
-//  })
-
 $('.scroll-down').click(function() {
-  $('#postForm').slideToggle()
+  $('#postForm').slideToggle();
+  $('#field').focus();
 })
 
 })
