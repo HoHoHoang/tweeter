@@ -20,21 +20,21 @@ Over the course of 4 days, cleaned and refined this project.
 
 ## Screenshots
 
-#### Screenshot of the Main page
-(https://github.com/HoHoHoang/tweeter/blob/master/images/Main-Page.png)
+### Screenshot of the Main page
+!["Screenshot of Main page"](https://github.com/HoHoHoang/tweeter/blob/master/images/Main-Page.png)
 
-#### Screenshot of Tweet Box opening up
-!["Screenshot of register page"](https://github.com/HoHoHoang/tweeter/blob/master/images/Tweet-Box.png)
+### Screenshot of Tweet Box opening up
+!["Screenshot of Tweet Box opening up"](https://github.com/HoHoHoang/tweeter/blob/master/images/Tweet-Box.png)
 
-#### Screenshot of Error Handling
-!["Screenshot of a user logged in and creating a new URL"](https://github.com/HoHoHoang/tweeter/blob/master/images/Error-Handling.png)
+### Screenshot of Error Handling
+!["Screenshot of Error Handling"](https://github.com/HoHoHoang/tweeter/blob/master/images/Error-Handling.png)
 
-#### Screenshot of Text Box being used
-!["Screenshot of Tiny URL"](https://github.com/HoHoHoang/tweeter/blob/master/images/Tweet-Function.png)
+### Screenshot of Text Box being used
+!["Screenshot of Text Box being used"](https://github.com/HoHoHoang/tweeter/blob/master/images/Tweet-Function.png)
 
-#### Screenshot of First Post
-!["Screenshot of a populated main page"](https://github.com/HoHoHoang/tweeter/blob/master/images/First-Post.png)
+### Screenshot of First Post
+!["Screenshot of First Post](https://github.com/HoHoHoang/tweeter/blob/master/images/First-Post.png)
 
-#### Screenshot of Responsive Design
-!["Screenshot of a populated main page"](https://github.com/HoHoHoang/tweeter/blob/master/images/Responsive-Design.png)
+### Screenshot of Responsive Design
+!["Screenshot of Responsive Design"](https://github.com/HoHoHoang/tweeter/blob/master/images/Responsive-Design.png)
 
