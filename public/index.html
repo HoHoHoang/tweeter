@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -10,11 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+   <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> 
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
 
     <!-- External JS -->
@@ -29,21 +34,22 @@
       <span class='styling'>tweeter</span>
       <span class='styling-two'>Write a new tweet</span>
       <br>
-      <button class="scroll-down">Scroll</button>
+      <button class="scroll-down">Tweet Tweet</button>
     </nav>
-    <header class="topHeader">
-      <div class='center'>
-        <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class='center'>
-        <h2>HoHoHoang</h2>
-      </div>
-    </header>
-  </body>
+   
 
     <!-- Page-specific (main) content here -->
   <main>
+
+
+    <header class="topHeader">
+      <div class='center'>
+        <img src="/images/profile-hex.png" class="current-profile-picture"> 
+      </div>
+      <div class='center'>
+        <h3 class="profile-name">HoHoHoang</h3>
+      </div>
+    </header>
 
 
     <section class="new-tweet">
@@ -59,8 +65,6 @@
         </div>
       </form>
 
-
-      
       <article id="tweetContainer">
 
         <div class="tweetBox tweetBoxHover">
@@ -90,4 +94,6 @@
 
     </section>
   </main>
+  </body>
+
 </html>

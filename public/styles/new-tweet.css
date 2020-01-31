@@ -7,11 +7,11 @@
   color: red;
   border: 2px red solid;
   padding: 10px;
+  margin-bottom: 40px;
 }
 
 section {
-  margin-top: 100px;
-  position: relative;
+  width: 50vw;
 }
 
 input {
@@ -22,8 +22,8 @@ input {
 }
 
 textarea {
-  width: 90vw;
-  height: 60px;
+  width: 45vw;
+  height: 11vh;
   border-top-width: 0;
   border-right-width: 0;
   border-left-width: 0;
@@ -31,4 +31,10 @@ textarea {
   border-bottom-color: black;
   background-color: #f4f1ec;
   resize: none;
+}
+
+form {
+  display: none;
+  margin-top: 20px;
+  margin-bottom: 80px;
 }

@@ -23,7 +23,7 @@ $(document).ready(function() {
     let $hr = $('<hr>')
 
     let $footer = $('<footer>');
-    let $spanDays = $('<span>').addClass('daysFooter').text(tweet.created_at);
+    let $spanDays = $('<span>').addClass('daysFooter').text(moment().fromNow());
     let $spanEmoji = $('<span>').addClass('emojiFooter').text("emojis");
     $footer.append($spanDays, $spanEmoji);
 
@@ -34,9 +34,6 @@ $(document).ready(function() {
   const $form = $('#postForm');
   const $textField = $('#field');
   const $errorMessage = $('.error-message')
- 
-  
-
 
 
  $form.on('submit', (event) => {
@@ -55,10 +52,9 @@ $(document).ready(function() {
      data: serialized
    })
      .done((post) => {
-
+      document.getElementById("charNum").innerText = 140
       $textField.val('')   // Makes the textarea value an empty string.
       loadTweet(); // allows upon a finished post to get the object.
-
      })
      .fail((err) => {
        console.error(err);
@@ -85,12 +81,15 @@ $(document).ready(function() {
 
 // use a .focus() for your textarea to have the type cursor in there.
 
- $('.scroll-down').click(function() {
-   console.log('is this working')
-   $('html, body').animate({
-     scrollTop: $('div#empty-space').offset().top
-   }, 500)
- })
+//  $('.scroll-down').click(function() {
+//    console.log('is this working')
+//    $('html, body').animate({
+//      scrollTop: $('div#empty-space').offset().top
+//    }, 500)
+//  })
 
+$('.scroll-down').click(function() {
+  $('#postForm').slideToggle()
+})
 
 })
