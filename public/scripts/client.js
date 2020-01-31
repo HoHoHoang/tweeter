@@ -23,7 +23,7 @@ $(document).ready(function() {
     let $hr = $('<hr>')
 
     let $footer = $('<footer>');
-    let $spanDays = $('<span>').addClass('daysFooter').text(moment().fromNow());
+    let $spanDays = $('<span>').addClass('daysFooter').text(moment(tweet.created_at).format("MMM Do YYYY, h:mm a"));
     let $spanEmoji = $('<span>').addClass('emojiFooter').text("emojis");
     $footer.append($spanDays, $spanEmoji);
 

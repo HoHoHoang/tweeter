@@ -12,13 +12,18 @@ nav {
 .styling {
   font-family: 'Bungee';
   float: left;
+  font-size: 1em;
 }
 
 .styling-two {
   float: right;
+  font-size: 1em;
 }
 
 .scroll-down {
   float: right;
+  padding: 6px;
+  background-color: lightsteelblue;
+  border-color: black;
 }
 

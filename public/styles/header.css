@@ -7,31 +7,22 @@ main {
 
 .topHeader {
   margin: 20px;
-  float: left;
-  height: 30vh;
+  height: 40vh;
   width: 50vw;
-  z-index: 80;
   background-color: #a500f7;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }
 
-.current-profile-picture{
-  padding: 10px;
-  display: inline-block;
-  float: center;
-  width: 30%;
-  height: 30%;
+.user-profile-picture {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
 }
 
 .profile-name {
-  display: inline-block;
-  float: center;
-
-}
-
-.center {
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
 }
 
 .tweetButtonCounter {
@@ -46,11 +37,9 @@ main {
   }
 
   .topHeader {
-    margin: 0px;
-  }
-
-  .topHeader {
+    height: 30vh;
     width: 100%;
+    margin: 0px;
   }
 
   .new-tweet {
@@ -78,6 +67,10 @@ main {
     width: 95vw;
   }
 
+  #advertisement-container {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -88,11 +81,9 @@ main {
   }
 
   .topHeader {
-    margin: 0px;
-  }
-
-  .topHeader {
+    height: 30vh;
     width: 100%;
+    margin: 0px;
   }
 
   .new-tweet {
@@ -118,6 +109,10 @@ main {
 
   textarea{
     width: 95vw;
+  }
+
+  #advertisement-container {
+    display: none;
   }
 
 }

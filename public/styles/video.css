@@ -1,0 +1,28 @@
+#advertisement-container {
+  position: relative;
+  top: 10vh;
+  right: 0; 
+  bottom: 0;
+  min-width: 50%; 
+  min-height: 50%;
+  width: auto; 
+  height: auto; 
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tagline {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
