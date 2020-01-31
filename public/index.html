@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-
+    <!-- External library for calculating time stamp -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <!-- Meta Information -->
@@ -15,18 +14,18 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-   <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> 
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/video.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> 
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
-    
   </head>
   
   <body>
@@ -34,83 +33,57 @@
       <span class='styling'>tweeter</span>
       <span class='styling-two'>Write a new tweet</span>
       <br>
-      <button class="scroll-down">Tweet Tweet</button>
+      <button class="toggle-form">Tweet Tweet</button>
     </nav>
    
+    <main>
 
-    <!-- Page-specific (main) content here -->
-  <main>
-
-
-    <header class="topHeader">
-      <div class="user-profile-picture">
-        <img src="/images/profile-hex.png" class="current-profile-picture"> 
-      </div>
-      <div>
-        <h3 class="profile-name">HoHoHoang</h3>
-      </div>
-
-
-      <div id="advertisement-container" class="">
-        <video autoplay="autoplay" loop="loop" muted="muted" class="advertisement" poster="/assets/videos/teaser-photo-7010f122f0f0957349d94530009f56ebe6d39907b68f0b5e39dfad2bb99083e1.jpg"><source src="https://www.lighthouselabs.ca/assets/videos/teaser-f5b40d96369c08267f5427f50f9afc2db1e07fc51b0dd77b7302fa3335d06c27.webm"></video>
-    
-        <div class="tagline">
-          <h1>Learn to code.<br> Really well.</h1>
-          <p class="intro">Advance and launch your career through coding education.</p>
+      <header class="topHeader">
+        <div class="user-profile-picture">
+          <img src="/images/profile-hex.png" class="current-profile-picture"> 
         </div>
-      </div>
-
-
-
-    </header>
-
-
-    <section class="new-tweet">
-      <form method="POST" id="postForm">
-
-        <span class="error-message">Hey... ughhh... that message is too long, could you make a TLDR?!</span>
-        <span class="error-message-empty">I'm sure you've got something on your mind, type something in :)</span>
-
-
-
-
-        <div id="empty-space"></div>
-        <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
-        <div class="tweetButtonCounter">
-          <input type="submit" value="Tweet">
-          <span id="charNum" class="counter" type="text">140</span>
+        <div>
+          <h3 class="profile-name">HoHoHoang</h3>
         </div>
-      </form>
-
-      <article id="tweetContainer">
-
-        <div class="tweetBox tweetBoxHover">
-          <header class="tweetHeader">
-            <img class="profilePicture" src="/images/profile-hex.png">
-            <span class="profileName">Elmo Barney</span>
-            <span class="profileHandle">@Barney</span>
-          </header>
-          
-          <p class="theTweet">Such Wow! Much Amazing! Great Job!</p>
-  
-          <hr>
-
-          <footer>
-            <span class="daysFooter">10 days ago</span>
-            <span class="emojiFooter">emojis</span>
-          </footer>
+        <div id="advertisement-container" class="">
+          <video autoplay="autoplay" loop="loop" muted="muted" class="advertisement" poster="/assets/videos/teaser-photo-7010f122f0f0957349d94530009f56ebe6d39907b68f0b5e39dfad2bb99083e1.jpg"><source src="https://www.lighthouselabs.ca/assets/videos/teaser-f5b40d96369c08267f5427f50f9afc2db1e07fc51b0dd77b7302fa3335d06c27.webm"></video>
+      
+          <div class="tagline">
+            <h1>Learn to code.<br> Really well.</h1>
+            <p class="intro">Advance and launch your career through coding education.</p>
+          </div>
         </div>
+      </header>
 
-      </article>
+      <section class="new-tweet">
+        <form method="POST" id="postForm">
+          <span class="error-message">Hey... ughhh... that message is too long, could you make a TLDR?!</span>
+          <span class="error-message-empty">I'm sure you've got something on your mind, type something in :)</span>
+          <div id="empty-space"></div>
+          <textarea id="field" class="bottom-border" name="text" placeholder="What are you humming about?"></textarea>
+          <div class="tweetButtonCounter">
+            <input type="submit" value="Tweet">
+            <span id="charNum" class="counter" type="text">140</span>
+          </div>
+        </form>
 
+        <article id="tweetContainer">
+          <div class="tweetBox tweetBoxHover">
+            <header class="tweetHeader">
+              <img class="profilePicture" src="/images/profile-hex.png">
+              <span class="profileName">Elmo Barney</span>
+              <span class="profileHandle">@Barney</span>
+            </header>
+            <p class="theTweet">Such Wow! Much Amazing! Great Job!</p>
+            <hr>
+            <footer>
+              <span class="daysFooter">10 days ago</span>
+              <span class="emojiFooter">emojis</span>
+            </footer>
+          </div>
+        </article>
+      </section>
 
-
-      <div id="posts"></div>
-
-
-
-    </section>
-  </main>
+    </main>
   </body>
-
 </html>

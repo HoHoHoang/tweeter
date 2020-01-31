@@ -1,14 +1,11 @@
 $(document).ready(function() {
+  const $form = $('#postForm');
+  const $textField = $('#field');
+  const $errorMessage = $('.error-message')
+  const $errorMessageEmpty = $ ('.error-message-empty')
 
-  const renderTweets = function(tweets) {
-    tweets.forEach((tweet) => {
-        const $tweets = $('#tweetContainer')
-        const $article = createTweetElement(tweet)
-
-        $tweets.prepend($article);
-    })
-  }
-
+// ************* HELPER FUNCTIONS BELOW **************
+// Appends all the data together for the tweet box.
   const createTweetElement = function(tweet) {
     let $tweet = $('<div>').addClass('tweetBox tweetBoxHover');
 
@@ -19,8 +16,7 @@ $(document).ready(function() {
     $header.append($img, $spanName, $spanHandle);
 
     let $p = $('<p>').addClass('theTweet').text(tweet.content.text);
-    
-    let $hr = $('<hr>')
+    let $hr = $('<hr>');
 
     let $footer = $('<footer>');
     let $spanDays = $('<span>').addClass('daysFooter').text(moment(tweet.created_at).format("MMM Do YYYY, h:mm a"));
@@ -30,12 +26,29 @@ $(document).ready(function() {
     $tweet.append($header, $p, $hr, $footer);
     return $tweet;
   }
-   
-  const $form = $('#postForm');
-  const $textField = $('#field');
-  const $errorMessage = $('.error-message')
-  const $errorMessageEmpty = $ ('.error-message-empty')
 
+// Renders the data to display the tweet box.
+  const renderTweets = function(tweets) {
+    tweets.forEach((tweet) => {
+      const $tweets = $('#tweetContainer');
+      const $article = createTweetElement(tweet);
+      $tweets.prepend($article);
+    })
+  };
+
+// Loads all the data up to be required by a POST.
+  const loadTweet = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'JSON',
+      success: (post) => {
+        renderTweets(post);
+      }
+    })
+  }
+  loadTweet();
+// ************* HELPER FUNCTIONS ABOVE **************
 
  $form.on('submit', (event) => {
    event.preventDefault();
@@ -43,9 +56,10 @@ $(document).ready(function() {
    let charNum = document.getElementById("charNum").innerText;
 
    if (charNum < 0) {
-    $errorMessage.slideDown()
+    $errorMessage.slideDown();
+    $errorMessageEmpty.slideUp();
   } else {
-    $errorMessage.slideUp()
+    $errorMessage.slideUp();
 
    $.ajax({
      url: '/tweets',
@@ -57,31 +71,18 @@ $(document).ready(function() {
       $textField.val('')   // Makes the textarea value an empty string.
       loadTweet(); // allows upon a finished post to get the object.
       $('#field').focus();
-      $errorMessageEmpty.slideUp()
+      $errorMessageEmpty.slideUp();
      })
      .fail((err) => {
-      $errorMessageEmpty.slideDown()
-       console.error(err);
+      $errorMessageEmpty.slideDown();
        $('#field').focus();
-
      });
     }
  });
 
- const loadTweet = () => {
-   $.ajax({
-     url: '/tweets',
-     method: 'GET',
-     dataType: 'JSON',
-     success: (post) => {
-       renderTweets(post);
-     }
-    })
- }
-
-$('.scroll-down').click(function() {
-  $('#postForm').slideToggle();
-  $('#field').focus();
-})
+  $('.toggle-form').click(function() {
+    $('#postForm').slideToggle();
+    $('#field').focus();
+  });
 
 })

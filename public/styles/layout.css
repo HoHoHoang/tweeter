@@ -28,8 +28,100 @@ body {
  */
 
  main {
-   margin-left: 5vw;
-   margin-right: 5vw;
    text-align: center;
    background-color: #f4f1ec;
  }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  main {
+    flex-flow: row wrap;
+    margin: 0px;
+  }
+
+  hr {
+    width: 100%;
+  }
+    
+  textarea {
+    width: 95vw;
+  }
+
+  .topHeader {
+    height: 30vh;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .new-tweet {
+    width: 100%;
+  }
+
+  .tweetBox {
+    width: 100%;
+  }
+
+  .theTweet {
+    font-size: 1rem;
+  }
+
+  .current-profile-picture {
+    max-height: 20vh;
+    max-width: 20vw;
+  }
+
+  #advertisement-container {
+    display: none;
+  }
+
+  #tweetContainer {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    flex-flow: row wrap;
+    margin: 0px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  textarea{
+    width: 95vw;
+  }
+
+  .topHeader {
+    height: 30vh;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .new-tweet {
+    width: 100%;
+  }
+
+  .tweetBox {
+    width: 100%;
+  }
+
+  .theTweet {
+    font-size: 1rem;
+  }
+
+  .current-profile-picture {
+    max-height: 20vh;
+    max-width: 20vw;
+  }
+
+  #advertisement-container {
+    display: none;
+  }
+
+  #tweetContainer {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
